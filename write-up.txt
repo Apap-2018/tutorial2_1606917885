@@ -1,0 +1,38 @@
+Latihan Project Viral
+
+1. a) Tidak
+   b) Terjadi whitelabel error karena url localhost masih merujuk ke /viral
+      sedangkan pada controller sudah diubah menjadi /viral2jari sehingga page
+      /viral tidak dapat ditemukan.
+   c) Sebagai alamat url, sehingga ketika diakses akan memanggil method di bawahnya.
+
+2. a) Tidak
+   b) Tampilan yang keluar pada halaman localhost sesuai dengan kode html yang dibuat dan tidak terdapat error.
+      @RequestMapping("/viral") yang sebelumnya memanggil method viral() yang sebelumnya bernama index(). Hal
+      ini tidak mempengaruhi apapun karena isi dari methodnya tetap sama.
+
+3. a) Tidak
+   b) Terjadi error dengan status 500 yaitu Internal Server Error. Hal ini terjadi karena template
+      viral2jari tidak ditemukan karena memang tidak ada.
+   c) return type pada method adalah untuk menampilkan view yaitu file html yang dibuat.
+
+Latihan Request Parameter
+
+1. Karena value pada th: text attribute akan meng-override konten dari tag tersebut.
+2. Jika link yang direquest http://localhost:8080/viral/challenge?name=kiki maka halaman berhasil ditampilkan karena
+   @RequestMapping sudah terupdate, sedangkan jika link yang direquest http://localhost:8080/challenge?name=kiki
+   maka halaman gagal untuk ditampilkan.
+3. a) terjadi bad request error karena parameter "name" tidak ada pada urlnya
+   b) nama yang ditampilkan bernilai null karena tidak ada parameter "name" pada url. Perbedaan dengan kasus a adalah
+      required untuk parameter berubah menjadi false sehingga apabila tidak ada tidak akan menghasilkan error.
+   c) Perbedaan dengan kasus b adalah kali ini terdapat nilai default pada parameter "name", yaitu "kiki" sehingga
+      kali ini nama yang ditampilkan bernilai "kiki"
+
+Latihan Path Variable
+
+1. Terjadi error dengan status 400 yaitu Bad Request karena tidak ada parameter "name" yang pada url
+2. Terjadi error dengan status 500 yaitu Internal Server Error karena terdapat dua method berbeda yang dipanggil oleh
+   RequestMapping("/challenge").
+3. Nama yang ditampilkan adalah "kiki" karena terdapat parameter name pada url yaitu localhost:8080/challenge/kiki
+
+   
